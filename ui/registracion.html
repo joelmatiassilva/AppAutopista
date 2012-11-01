@@ -1,0 +1,92 @@
+<!DOCTYPE html> 
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<title>Single page template</title> 
+	<link rel="stylesheet" href="css/jquery.mobile-1.1.1.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+</head> 
+
+<body> 
+
+<div data-role="page">
+
+	<div data-role="header" data-position="fixed">
+		<h1>BA Estado Autopistas</h1>
+		<div data-role="navbar">
+			<ul>
+				<li><a href="index.html">Estado Autopistas</a></li>
+				<li><a href="c.html">Perito Moreno</a></li>
+				<li><a href="login.html" data-rel="dialog">Login</a></li>
+			</ul>
+		</div><!-- /navbar -->
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		
+		<div data-role="fieldcontain">
+			<label for="name">Nombre:</label>
+			<input type="text" name="name" id="name" value="" placeholder="Ingresar nombre" />
+		</div>	
+
+		<div data-role="fieldcontain">
+			<label for="password">Contraseña:</label>
+			<input type="text" name="password" id="password" value="" placeholder="Ingresar contraseña" />
+		</div>	
+
+		<div data-role="fieldcontain">
+			<label for="password">Repetir contraseña:</label>
+			<input type="text" name="password" id="password" value="" placeholder="Repetir contraseña" />
+		</div>	
+
+			<div  data-role="fieldcontain">
+			 	<fieldset data-role="controlgroup">
+					<legend>Elegir autopistas de interes:</legend>
+					<input type="checkbox" name="checkbox-a" id="checkbox-a" class="custom" />
+					<label for="checkbox-a">Todas</label>
+
+					<input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+					<label for="checkbox-1a">25 de Mayo</label>
+
+					<input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+					<label for="checkbox-2a">Dellepiane</label>
+					
+					<input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+					<label for="checkbox-3a">Illa</label>
+
+					<input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+					<label for="checkbox-4a">Perito Moreno</label>
+			    </fieldset>
+			</div>
+			<label for="flip-1">Habilitar confirmación ante incidentes:</label>		
+			<select name="flip-1" id="flip-1" data-role="slider">
+				<option value="on">No</option>
+				<option value="off">Si</option>
+			</select>
+ 
+			<h5>Esto se va a poner dinamicamente</h5>
+			<h5>Elegir horario/s para ser notificado</h5>
+			<table border="0">
+			<tr>
+			<td>
+	         	<input type="text" name="hora" id="hora" value="10:30" min="0" max="24"/></td>
+			<td><a href="index.html" data-role="button">Agregar otro horario de confirmación</a></td>
+			</tr>
+			</table>
+
+
+
+		
+	</div><!-- /content -->
+	
+	<div data-role="footer">
+		<h4>Footer content</h4>
+	</div><!-- /footer -->
+	
+</div><!-- /page -->
+
+</body>
+</html>
