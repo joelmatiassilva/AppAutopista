@@ -6,5 +6,6 @@ define("db_user",     "root");
 define("db_password",     "tectimes");
 define("api_user",     "akatcheroff@gmail.com");
 define("api_password",     "tectimes");
+define("api_url", "http://api.elserver.com/cron/?");
 
 ?>

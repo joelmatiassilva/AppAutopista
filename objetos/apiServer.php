@@ -23,7 +23,6 @@ class apiServer {
      * @return array con dos campos, access_token y sso
      */
     public function login() {
-
         $curlInit = curl_init("http://api.elserver.com/sso/login/?sso=" . api_user . "&password=" . api_password);
         curl_setopt($curlInit, CURLOPT_RETURNTRANSFER, true);
         $resultadoApi = curl_exec($curlInit);
@@ -61,9 +60,9 @@ class apiServer {
      * Elimina una tarea cron
      * @return  1(exito) o 0 (error)
      */
-    public function eliminarTareaCron($idTarea) {
+    public function eliminarTareaCron($access_token, $account, $cron_id) {
         
-        $curlInit = curl_init("http://api.elserver.com/cron/?access_token=&account=&cron_id=");
+        $curlInit = curl_init("http://api.elserver.com/cron/?access_token=" . . "&account" . $account . "=&cron_id=" . $cron_id);
         curl_setopt($curlInit, CURLOPT_RETURNTRANSFER, true);
         $resultadoApi = curl_exec($curlInit);
         curl_close($curlInit);
@@ -72,11 +71,35 @@ class apiServer {
     }
 
     public function crearTareaCron() {
-        //1-Conectar a la api
-        //2-Usar la api
-        //3-Meter en la bd asociando un user con un cron_id
+        $url ="http://api.elserver.com/cron/?"
+        $url .="access_token=";
+        $url .= "&account=&";
+        $url .= "minute=&";
+        $url .= "hour=&";
+        $url .= "dayofmonth=&";
+        $url .= "month=&";
+        $url .= "dayofweek=&";
+        $url .= "url=&";
+        $url .= "email=&";
+        $url .= "auth_user=&"
+        $url .= "auth_password=";
+        
+  
+        
+        $curlInit = curl_init($url);
+        curl_setopt($curlInit, CURLOPT_RETURNTRANSFER, true);
+        $resultadoApi = curl_exec($curlInit);
+        curl_close($curlInit);
+        $resultado = json_decode($resultadoApi, true);
     }
 
+    public function modificarTareaCron() {
+        $curlInit = curl_init("access_token=&account=&cron_id=&minute=&hour=&dayofmonth=&month=&dayofweek=&url=&email=&auth_user=&auth_password=&habilitado=");
+        curl_setopt($curlInit, CURLOPT_RETURNTRANSFER, true);
+        $resultadoApi = curl_exec($curlInit);
+        curl_close($curlInit);
+        $resultado = json_decode($resultadoApi, true);
+    }
 }
 
 ?>
